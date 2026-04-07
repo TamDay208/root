@@ -38,9 +38,9 @@
             </button>
         </div>
     </nav>
-    <!-- Marquee -->
-    <div class="marquee-wrapper">
-        <div class="marquee-text" data-i18n="marquee_text">
+    <!-- Notice Bar (Bypass AdBlock) -->
+    <div class="notice-bar">
+        <div class="notice-content" data-i18n="marquee_text">
             🌟 Cảm ơn đã đến với website của mình, dự án nuôi tôi được thực hiện bởi <span>TamDayyy</span> 🌟
         </div>
     </div>
@@ -65,33 +65,33 @@
                 </div>
 
                 <div class="action-buttons">
-                    <button class="btn btn-primary" onclick="scrollToPackages()" data-i18n="btn_donate">Ủng hộ
+                    <button class="btn btn-primary" onclick="scrollSection('tierSection')" data-i18n="btn_donate">Ủng hộ
                         ngay</button>
                 </div>
             </section>
 
 
-            <!-- Packages -->
-            <section class="card" id="packagesSection">
+            <!-- Tiers (Bypass AdBlock) -->
+            <section class="card" id="tierSection">
                 <h3 class="card-title" data-i18n="package_title">Gói ủng hộ</h3>
-                <div class="package-list">
-                    <div class="package-item" data-amount="1000">
+                <div class="tier-list">
+                    <div class="tier-item" data-amount="1000">
                         <div class="pkg-amount">1.000đ</div>
-                        <div class="pkg-desc" data-i18n="pkg_1k">1 ly trà đá vỉa hè giải khát</div>
+                        <div class="pkg-desc" data-i18n="pkg_1k">1 cái kẹo mút</div>
                     </div>
-                    <div class="package-item" data-amount="5000">
+                    <div class="tier-item" data-amount="5000">
                         <div class="pkg-amount">5.000đ</div>
                         <div class="pkg-desc" data-i18n="pkg_5k">1 gói bim bim</div>
                     </div>
-                    <div class="package-item" data-amount="10000">
+                    <div class="tier-item" data-amount="10000">
                         <div class="pkg-amount">10.000đ</div>
                         <div class="pkg-desc" data-i18n="pkg_10k">1 ổ bánh mì xá xíu</div>
                     </div>
-                    <div class="package-item" data-amount="50000">
+                    <div class="tier-item" data-amount="50000">
                         <div class="pkg-amount">50.000đ</div>
                         <div class="pkg-desc" data-i18n="pkg_50k">1 ly trà sữa xịn xò</div>
                     </div>
-                    <div class="package-item" data-amount="100000" style="border-bottom: none;">
+                    <div class="tier-item" data-amount="100000" style="border-bottom: none;">
                         <div class="pkg-amount">100.000đ</div>
                         <div class="pkg-desc" data-i18n="pkg_100k">Bạn đã cho tôi 1 bữa cơm no !!!</div>
                     </div>
@@ -144,8 +144,10 @@
                     data-i18n="qr_success">
                     Đã cập nhật mã QR!</div>
                 <div class="qr-actions" style="display: flex; gap: 10px; justify-content: center; margin-top: 15px;">
-                    <button class="btn btn-secondary" onclick="downloadQR()" style="font-size: 0.85rem; padding: 0.5rem 1rem;" data-i18n="btn_dl_qr">⬇️ Tải mã QR</button>
-                    <button class="btn btn-secondary" onclick="copySTK()" style="font-size: 0.85rem; padding: 0.5rem 1rem;" data-i18n="btn_copy">📋 Copy STK</button>
+                    <button class="btn btn-secondary" onclick="downloadQR()"
+                        style="font-size: 0.85rem; padding: 0.5rem 1rem;" data-i18n="btn_dl_qr">⬇️ Tải mã QR</button>
+                    <button class="btn btn-secondary" onclick="copySTK()"
+                        style="font-size: 0.85rem; padding: 0.5rem 1rem;" data-i18n="btn_copy">📋 Copy STK</button>
                 </div>
             </section>
 
