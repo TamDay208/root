@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         header.addEventListener('click', () => {
             const item = header.parentElement;
             const body = item.querySelector('.accordion-body');
-
+            
             // Toggle current active state
             if (item.classList.contains('active')) {
                 item.classList.remove('active');
@@ -24,27 +24,27 @@ document.addEventListener('DOMContentLoaded', () => {
         body.classList.add('hidden');
     });
 
-    // --- PACKAGE SELECT & QR UPDATE ---
-    const packages = document.querySelectorAll('.package-item');
+    // --- TIER SELECT & QR UPDATE (Bypass AdBlock) ---
+    const tiers = document.querySelectorAll('.tier-item');
     const qrImage = document.getElementById('qrImage');
     const qrStatus = document.getElementById('qrStatus');
 
-    packages.forEach(pkg => {
-        pkg.addEventListener('click', () => {
-            const amount = pkg.getAttribute('data-amount');
-
+    tiers.forEach(tier => {
+        tier.addEventListener('click', () => {
+            const amount = tier.getAttribute('data-amount');
+            
             // Format URL (MBBank, Account: 0913635724)
             const addInfo = encodeURIComponent('Ung ho TamDayyy');
             const qrUrl = `https://img.vietqr.io/image/MB-0913635724-compact2.png?amount=${amount}&addInfo=${addInfo}`;
-
+            
             // Visual feedback on QR update
             qrImage.style.opacity = 0.5;
             qrImage.src = qrUrl;
-
+            
             qrImage.onload = () => {
                 qrImage.style.transition = 'opacity 0.3s';
                 qrImage.style.opacity = 1;
-
+                
                 // Show status text
                 qrStatus.style.opacity = 1;
                 setTimeout(() => {
@@ -69,13 +69,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // Load saved theme
     if (localStorage.getItem('theme') === 'light') {
         document.body.classList.add('light-theme');
-        themeIcon.querySelector('path').setAttribute('d', sunPath);
+        if (themeIcon.querySelector('path')) {
+            themeIcon.querySelector('path').setAttribute('d', sunPath);
+        }
     }
 
     themeToggle.addEventListener('click', () => {
         document.body.classList.toggle('light-theme');
         const isLight = document.body.classList.contains('light-theme');
-
+        
         if (isLight) {
             themeIcon.querySelector('path').setAttribute('d', sunPath);
             localStorage.setItem('theme', 'light');
@@ -191,10 +193,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-// Global function for the "Ủng hộ ngay" button
-window.scrollToPackages = function () {
-    const pkgSection = document.getElementById('packagesSection');
-    pkgSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+// Global function for Smooth Scroll (Refactored to bypass adblock)
+window.scrollSection = function(id) {
+    const el = document.getElementById(id);
+    if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
 };
 
 window.downloadQR = function () {
