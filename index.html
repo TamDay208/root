@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="title">Dự Án Nuôi Tôi - TamDayyy</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="background-animation">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+    <!-- Top Nav -->
+    <nav class="top-nav">
+        <div class="nav-left">
+            <div class="avatar-logo">
+                <img src="anh.jpg" alt="Logo">
+            </div>
+            <div class="nav-texts">
+                <h1 data-i18n="nav_title">Dự án Nuôi Tôi</h1>
+                <p data-i18n="nav_subtitle">Phiên bản "minh bạch tuyệt đối"</p>
+            </div>
+        </div>
+        <div class="nav-right" style="display: flex; gap: 0.5rem; align-items: center;">
+            <button class="theme-toggle" style="font-weight: 700; font-size: 0.9rem;" id="langToggle"
+                title="Toggle Language">EN</button>
+            <button class="theme-toggle" id="themeToggle" title="Toggle Theme">
+                <!-- Moon icon SVG -->
+                <svg id="themeIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+    <!-- Marquee -->
+    <div class="marquee-wrapper">
+        <div class="marquee-text" data-i18n="marquee_text">
+            🌟 Cảm ơn đã đến với website của mình, dự án nuôi tôi được thực hiện bởi <span>TamDayyy</span> 🌟
+        </div>
+    </div>
+
+    <!-- Main Container Grid -->
+    <main class="dashboard-container">
+
+        <!-- Left Column -->
+        <div class="column-left">
+
+            <!-- Hero Card -->
+            <section class="card hero-card">
+                <h2 data-i18n="hero_title">Nuôi Tôi — để tôi no... (và bạn vui)</h2>
+                <p class="hero-desc" data-i18n="hero_desc">Mỗi khoản chuyển khoản của bạn sẽ góp phần giúp <strong>tôi
+                        được no hơn một chút</strong> và mang lại <strong>niềm vui tinh thần cho bạn.</strong> 😄</p>
+
+                <div class="stats-row">
+                    <div class="stat-box">
+                        <span class="stat-label" data-i18n="stat_goal">Mục tiêu tháng này</span>
+                        <span class="stat-value">200.000đ</span>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn btn-primary" onclick="scrollToPackages()" data-i18n="btn_donate">Ủng hộ
+                        ngay</button>
+                </div>
+            </section>
+
+
+            <!-- Packages -->
+            <section class="card" id="packagesSection">
+                <h3 class="card-title" data-i18n="package_title">Gói ủng hộ</h3>
+                <div class="package-list">
+                    <div class="package-item" data-amount="1000">
+                        <div class="pkg-amount">1.000đ</div>
+                        <div class="pkg-desc" data-i18n="pkg_1k">1 ly trà đá vỉa hè giải khát</div>
+                    </div>
+                    <div class="package-item" data-amount="5000">
+                        <div class="pkg-amount">5.000đ</div>
+                        <div class="pkg-desc" data-i18n="pkg_5k">1 gói bim bim</div>
+                    </div>
+                    <div class="package-item" data-amount="10000">
+                        <div class="pkg-amount">10.000đ</div>
+                        <div class="pkg-desc" data-i18n="pkg_10k">1 ổ bánh mì xá xíu</div>
+                    </div>
+                    <div class="package-item" data-amount="50000">
+                        <div class="pkg-amount">50.000đ</div>
+                        <div class="pkg-desc" data-i18n="pkg_50k">1 ly trà sữa xịn xò</div>
+                    </div>
+                    <div class="package-item" data-amount="100000" style="border-bottom: none;">
+                        <div class="pkg-amount">100.000đ</div>
+                        <div class="pkg-desc" data-i18n="pkg_100k">Bạn đã cho tôi 1 bữa cơm no !!!</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ -->
+            <section class="card">
+                <h3 class="card-title" data-i18n="faq_title">FAQ</h3>
+                <div class="accordion">
+                    <div class="accordion-item active">
+                        <button class="accordion-header" data-i18n="faq_q1">Tiền của tôi đi đâu?</button>
+                        <div class="accordion-body">
+                            <p data-i18n="faq_a1">Đi vào "quỹ" — và quỹ thì đi vào... lòng tin. (đùa thôi, vào tài khoản
+                                của tôi mà 😅)</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header" data-i18n="faq_q2">Có minh bạch không?</button>
+                        <div class="accordion-body hidden">
+                            <p data-i18n="faq_a2">Minh bạch: bạn thấy rõ là bạn đã chuyển khoản để nuôi tôi.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header" data-i18n="faq_q3">Có sao kê không?</button>
+                        <div class="accordion-body hidden">
+                            <p data-i18n="faq_a3">Sao kê sẽ được cập nhật định kỳ (hoặc không). 😊</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Right Column -->
+        <div class="column-right">
+
+            <!-- QR Card -->
+            <section class="card qr-card text-center" id="qrSection">
+                <h3 class="card-title text-center" style="margin-bottom: 20px;" data-i18n="qr_title">Quét mã để ủng hộ
+                    nhanh</h3>
+                <div class="qr-box">
+                    <img id="qrImage"
+                        src="https://img.vietqr.io/image/MB-0913635724-compact2.png?amount=0&addInfo=Ung%20ho%20TamDayyy"
+                        alt="Mã QR Code Ủng Hộ">
+                </div>
+                <p class="text-xs text-muted" style="margin-top: 15px;" data-i18n="qr_note">* QR là thật và bạn đang
+                    chuyển khoản để nuôi tôi 😅</p>
+                <div id="qrStatus" class="qr-status-msg"
+                    style="margin-top: 10px; color: #4caf50; font-weight: bold; font-size: 14px; opacity: 0; transition: opacity 0.5s;"
+                    data-i18n="qr_success">
+                    Đã cập nhật mã QR!</div>
+                <div class="qr-actions" style="display: flex; gap: 10px; justify-content: center; margin-top: 15px;">
+                    <button class="btn btn-secondary" onclick="downloadQR()" style="font-size: 0.85rem; padding: 0.5rem 1rem;" data-i18n="btn_dl_qr">⬇️ Tải mã QR</button>
+                    <button class="btn btn-secondary" onclick="copySTK()" style="font-size: 0.85rem; padding: 0.5rem 1rem;" data-i18n="btn_copy">📋 Copy STK</button>
+                </div>
+            </section>
+
+            <!-- Timeline -->
+            <section class="card">
+                <h3 class="card-title" data-i18n="tl_title">Hành trình “nuôi tôi”</h3>
+                <div class="timeline">
+                    <div class="timeline-step">
+                        <div class="step-num bg-gray">1</div>
+                        <div class="step-content">
+                            <h4 data-i18n="tl_step1_title">Kêu gọi</h4>
+                            <p data-i18n="tl_step1_desc">Lời kêu gọi cảm động, nhạc nền piano...</p>
+                        </div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="step-num bg-gray">2</div>
+                        <div class="step-content">
+                            <h4 data-i18n="tl_step2_title">Đóng góp</h4>
+                            <p data-i18n="tl_step2_desc">Bạn bấm “Ủng hộ ngay” với niềm tin rực cháy.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="step-num bg-gray">3</div>
+                        <div class="step-content">
+                            <h4 data-i18n="tl_step3_title">Cập nhật</h4>
+                            <p data-i18n="tl_step3_desc">Tiến độ nhảy số... hơi nghệ thuật.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="step-num bg-gray">4</div>
+                        <div class="step-content">
+                            <h4 data-i18n="tl_step4_title">Cảm ơn</h4>
+                            <p data-i18n="tl_step4_desc">Bạn nhận được một cái ôm online 🫂</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
